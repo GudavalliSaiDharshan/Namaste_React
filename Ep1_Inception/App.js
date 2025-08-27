@@ -90,3 +90,5 @@ console.log(parent);
 const rootReact = ReactDOM.createRoot(document.getElementById("rootReact"));
 
 rootReact.render(parent);
+
+

@@ -1,12 +1,11 @@
-# Namaste_React
+# Namaste_React 🚀
+
 Implementing The concepts from NamasteDev's, NamasteReact course (Coding and Theory)
-
-
 
 1. What is Emmet?
 
 Emmet is a productivity tool (built into VS Code and many editors) that lets you write short abbreviations that expand into full-fledged HTML or CSS code.
-Example: typing ul>li*5 → expands to 5 list items inside an unordered list.
+Example: typing ul>li\*5 → expands to 5 list items inside an unordered list.
 It speeds up front-end development, reduces repetitive typing, and improves coding efficiency.
 
 2. Difference between a Library and a Framework?
@@ -91,3 +90,45 @@ Cleaner, more concise syntax.
 Example:
 
 const add = (a, b) => a + b;
+
+
+
+
+# Parcel 📦 🚀
+- Dev Build
+- Local Server
+- HMR (Hot Module Replacement)
+- File Watching Algorithm - written on C++
+- Caching -> Faster Builds
+- Image Optimization
+- Minification of our file
+- Bundling
+- Compress
+- Consistent Hashing
+- Code Splitting
+- Differential Bundling - Support Older Browsers
+- Diagnostic
+- Error Handling
+- HTTPs
+- Tree Shaking - remove unused code
+
+
+10. What is `NPM`?
+11. What is `Parcel/Webpack`? Why do we need it?
+12. What is `.parcel-cache`
+13. What is `npx` ?
+14. What is difference between `dependencies` vs `devDependencies`
+14. What is Tree Shaking?
+15. What is Hot Module Replacement?
+16. List down your favourite 5 superpowers of Parcel and describe any 3 of them in your 
+ own words.
+17. What is `.gitignore`? What should we add and not add into it?
+18. What is the difference between `package.json` and `package-lock.json`
+19. Why should I not modify `package-lock.json`?
+20. What is `node_modules` ? Is it a good idea to push that on git?
+21. What is the `dist` folder?
+22. What is `browserlists` 
+23. Read about dif bundlers: vite, webpack, parcel
+24. Read about:  ^ - caret and ~ - tilda
+25. Read about Script types in html (MDN Docs)
+26. cross-site scripting
