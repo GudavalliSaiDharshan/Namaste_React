@@ -91,10 +91,8 @@ Example:
 
 const add = (a, b) => a + b;
 
-
-
-
 # Parcel 📦 🚀
+
 - Dev Build
 - Local Server
 - HMR (Hot Module Replacement)
@@ -112,23 +110,47 @@ const add = (a, b) => a + b;
 - HTTPs
 - Tree Shaking - remove unused code
 
+# Namaste Food
+
+<!-- - Header
+- - Logo
+- - Nav Items
+- Body
+- - Search
+- - RestaurantContainer
+- - Restaurant Card
+- - Img
+- - Name of Restaurant, star rating, cuisine, delivery time
+- Footer
+- - Copyright
+- - Links
+- - Address
+- - Contact -->
 
 10. What is `NPM`?
 11. What is `Parcel/Webpack`? Why do we need it?
 12. What is `.parcel-cache`
 13. What is `npx` ?
 14. What is difference between `dependencies` vs `devDependencies`
-14. What is Tree Shaking?
-15. What is Hot Module Replacement?
-16. List down your favourite 5 superpowers of Parcel and describe any 3 of them in your 
- own words.
-17. What is `.gitignore`? What should we add and not add into it?
-18. What is the difference between `package.json` and `package-lock.json`
-19. Why should I not modify `package-lock.json`?
-20. What is `node_modules` ? Is it a good idea to push that on git?
-21. What is the `dist` folder?
-22. What is `browserlists` 
-23. Read about dif bundlers: vite, webpack, parcel
-24. Read about:  ^ - caret and ~ - tilda
-25. Read about Script types in html (MDN Docs)
-26. cross-site scripting
+15. What is Tree Shaking?
+16. What is Hot Module Replacement?
+17. List down your favourite 5 superpowers of Parcel and describe any 3 of them in your
+    own words.
+18. What is `.gitignore`? What should we add and not add into it?
+19. What is the difference between `package.json` and `package-lock.json`
+20. Why should I not modify `package-lock.json`?
+21. What is `node_modules` ? Is it a good idea to push that on git?
+22. What is the `dist` folder?
+23. What is `browserlists`
+24. Read about dif bundlers: vite, webpack, parcel
+25. Read about: ^ - caret and ~ - tilda
+26. Read about Script types in html (MDN Docs)
+27. cross-site scripting
+
+
+# Reack Hooks
+
+(Normal JS utility functions)
+
+- useState()
+- useEffect()
