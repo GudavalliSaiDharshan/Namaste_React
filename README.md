@@ -147,10 +147,14 @@ const add = (a, b) => a + b;
 26. Read about Script types in html (MDN Docs)
 27. cross-site scripting
 
-
 # Reack Hooks
 
 (Normal JS utility functions)
 
 - useState()
 - useEffect()
+
+# 2 types of Routing in web pages
+
+- Client Side Routing
+- Server Side Routing
