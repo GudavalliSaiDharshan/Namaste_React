@@ -4,8 +4,8 @@ export const CDN_URL =
 export const LOGO_URL =
   "https://www.logodesign.net/logo/smoking-burger-with-lettuce-3624ld.png";
 
-export const INITIAL_LAT = 12.9966135;
-export const INITIAL_LNG = 77.5920581;
+export const INITIAL_LAT = 12.9351929;
+export const INITIAL_LNG = 77.62448069999999;
 export const CSRF_TOKEN = "fOqnOXIrC5f3-hnkmt9gg-D5ZRnG66a_jS3vrU54";
 
 export const MENU_API =

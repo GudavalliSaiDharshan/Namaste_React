@@ -4,42 +4,27 @@ import RestaurantCard from "./RestaurantCard";
 import Shimmer from "./Shimmer";
 import { Link } from "react-router";
 import { INITIAL_LAT, INITIAL_LNG } from "../utils/constants";
+import useOnlineStatus from "../utils/useOnlineStatus";
 
 const Body = () => {
   const [listOfRestaurants, setListOfRestaurants] = useState([]);
   const [filteredRestaurants, setFilteredRestaurants] = useState([]);
+  const [loading, setLoading] = useState(false);
   // const [nextOffset, setNextOffset] = useState("");
   // const [csrfToken, setCsrfToken] = useState("");
-  const [loading, setLoading] = useState(false);
   // const [hasMore, setHasMore] = useState(true);
 
   const [searchText, setSearchText] = useState("");
-
-  // const fetchData = async () => {
-  //   const data = await fetch(
-  //     "https://www.swiggy.com/dapi/restaurants/list/v5?lat=12.9966135&lng=77.5920581&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING" // works when cors chrome plugin toggle on
-  //     // "https://pastebin.com/raw/0QcdEDBL" // (mock) works when cors chrome plugin toggle on
-  //     // "https://swiggy-api-4c740.web.app/swiggy-api.json" // (mock) works when cors chrome plugin toggle on
-  //     // "https://raw.githubusercontent.com/namastedev/namaste-react/refs/heads/main/swiggy-api" // (mock) works without cros plugin
-  //   );
-  //   const json = await data.json();
-
-  //   console.log(json?.data, "JSON");
-  //   setListOfRestaurants(
-  //     json?.data?.cards[4]?.card?.card?.gridElements?.infoWithStyle?.restaurants
-  //   );
-  //   setFilteredRestaurants(
-  //     json?.data?.cards[4]?.card?.card?.gridElements?.infoWithStyle?.restaurants
-  //   );
-  // };
-
-  // new way with loading nextOffSet in an InfiniteScroll way
 
   const fetchInitialRestaurants = useCallback(async () => {
     setLoading(true);
     try {
       const res = await fetch(
-        `https://www.swiggy.com/dapi/restaurants/list/v5?lat=${INITIAL_LAT}&lng=${INITIAL_LNG}&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING`
+        `https://www.swiggy.com/dapi/restaurants/list/v5?lat=${INITIAL_LAT}&lng=${INITIAL_LNG}&page_type=DESKTOP_WEB_LISTING`
+        //  "https://www.swiggy.com/dapi/restaurants/list/v5?lat=12.9966135&lng=77.5920581&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING" // works when cors chrome plugin toggle on
+        // "https://pastebin.com/raw/0QcdEDBL" // (mock) works when cors chrome plugin toggle on
+        // "https://swiggy-api-4c740.web.app/swiggy-api.json" // (mock) works when cors chrome plugin toggle on
+        // "https://raw.githubusercontent.com/namastedev/namaste-react/refs/heads/main/swiggy-api" // (mock) works without cros plugin
       );
       const json = await res.json();
 
@@ -114,6 +99,14 @@ const Body = () => {
   //   window.addEventListener("scroll", handleScroll);
   //   return () => window.removeEventListener("scroll", handleScroll);
   // }, [fetchMoreRestaurants]);
+
+  const onlineStatus = useOnlineStatus();
+  if (onlineStatus === false)
+    return (
+      <h1>
+        Looks like you are offline!! Please check your internet connection!!
+      </h1>
+    );
 
   return loading && listOfRestaurants?.length === 0 ? (
     <Shimmer />
