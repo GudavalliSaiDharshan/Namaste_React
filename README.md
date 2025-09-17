@@ -160,3 +160,12 @@ const add = (a, b) => a + b;
 - Server Side Routing
 
 # SASS vs SCSS VS CSS
+
+
+# Redux Toolkit
+- Install @reduxjs/toolkit and react-redux
+- Build our store
+- Connect our store to our app
+- Slice (cartSlice)
+- dispatch(action)
+- Selector

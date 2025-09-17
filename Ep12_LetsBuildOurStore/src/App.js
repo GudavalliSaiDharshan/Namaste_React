@@ -3,15 +3,16 @@ import ReactDOM from "react-dom/client";
 import Header from "./components/Header";
 import Body from "./components/Body";
 import { createBrowserRouter, RouterProvider, Outlet } from "react-router";
-// import About from "./components/About";
 import ContactUs from "./components/ContactUs";
 import Error from "./Error";
 import RestaurantMenu from "./components/RestaurantMenu";
 import UserContext from "./utils/UserContext";
-// import Grocery from "./components/Grocery";
+import { Provider } from "react-redux";
+import appStore from "./utils/appStore";
+import Cart from "./components/Cart";
 
-const Grocery = lazy(() => import("./components/Grocery"));
-const About = lazy(() => import("./components/About"));
+const Grocery = lazy(() => import("./components/Grocery")); // lazy loading
+const About = lazy(() => import("./components/About")); // lazy loading
 
 // Chunking
 // Code Splitting
@@ -32,14 +33,16 @@ const AppLayout = () => {
   }, []);
 
   return (
-    <UserContext.Provider value={{ loggedInUser: userName, setUserName }}>
-      <div className="app">
-        {/* <UserContext.Provider value={{ loggedInUser: 'elon mush' }}> */}
-        <Header />
-        {/* </UserContext.Provider> */}
-        <Outlet />
-      </div>
-    </UserContext.Provider>
+    <Provider store={appStore}>
+      <UserContext.Provider value={{ loggedInUser: userName, setUserName }}>
+        <div className="app">
+          {/* <UserContext.Provider value={{ loggedInUser: 'elon mush' }}> */}
+          <Header />
+          {/* </UserContext.Provider> */}
+          <Outlet />
+        </div>
+      </UserContext.Provider>
+    </Provider>
   );
 };
 
@@ -76,6 +79,10 @@ const appRouter = createBrowserRouter([
       {
         path: "/restaurants/:resId",
         element: <RestaurantMenu />,
+      },
+      {
+        path: '/cart',
+        element: <Cart />
       },
     ],
     errorElement: <Error />,
